@@ -1,5 +1,13 @@
 :root{
+  --main-color:  #2980b9;
+  --form-bg: rgba(0,0,0, 0.8);
+  --border-color: #2980b9;
+  --form-color:#c6c6c6;
+  --form-input-bg:rgba(2,2,2, 0.22);
+
+  --border-radius: 10px;
   --form-logo-size: 200px;
+  --form-max-width: 500px;
 }
 
 *{
@@ -21,6 +29,16 @@ body{
   user-select: none;
 }
 
+.form{
+  padding: 50px 60px;
+  background-color: var(--form-bg);
+  border-radius: var(--border-radius);
+  color: var(--form-color);
+  text-align: center;
+  width: 100%;
+  max-width: var(--form-max-width);
+}
+
 .form-logo {
   display: block;
   margin-bottom: 50px;
@@ -28,4 +46,35 @@ body{
 
 .form-logo img {
   width: var(--form-logo-size);
+}
+
+.form-group{
+  position: relative;
+  margin-bottom: 20px;
+}
+
+.form-input{
+  background-color: var(--form-input-bg);
+  border: 2px solid transparent;
+  height: 46px;
+  width: 100%;
+  position: relative;
+  color: var(--form-color);
+  border-radius: var(--border-radius);
+  padding: 0 20px;
+  font-size: 16px;
+  outline: none;
+  transition: border 0.3s ease-in-out;
+}
+
+.form-input::placeholder{
+  color:var(--form-color)
+}
+
+.form-input-icon{
+  position: absolute;
+  right: 10px;
+  top: 14px;
+  transform: scale(0);
+  transition: transform 0.3s ease-in-out;
 }
