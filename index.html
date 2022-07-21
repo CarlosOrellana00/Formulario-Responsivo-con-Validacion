@@ -5,8 +5,30 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Formulario Login</title>
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200;1,300;1,400;1,600;1,700;1,900&display=swap" rel="stylesheet">
+  <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
+  <link rel="stylesheet" href="style.css">
 </head>
-<body>
+<body style="background-image: url(./imagen/wallpaper.jpg);">
+   <div class="form" id="signin-form">
+    <a href="#" class="form-logo">
+      <img src="/imagen/company.png" alt="company logo">
+    </a>
+    <div class="form-group">
+      <input type="email" class="form-input" placeholder="Email" id="signin-email">
+      <span class="form-input-icon err">
+        <i class="bx bx-error-circle"></i>
+      </span>
+      <span class="form-input-icon success">
+        <i class="bx bx-check-circle"></i>
+      </span>
+      <span class="form-input-err-msg" data-err-for="signin-email"></span>
+    </div>
 
+   </div>
+
+
+  <script src="effect.js"></script>
 </body>
 </html>
