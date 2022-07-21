@@ -1,3 +1,7 @@
+:root{
+  --form-logo-size: 200px;
+}
+
 *{
   padding: 0;
   margin: 0;
@@ -15,4 +19,13 @@ body{
   background-repeat: no-repeat;
   background-position: center;
   user-select: none;
+}
+
+.form-logo {
+  display: block;
+  margin-bottom: 50px;
+}
+
+.form-logo img {
+  width: var(--form-logo-size);
 }
