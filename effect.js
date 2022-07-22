@@ -37,4 +37,18 @@ checkSigninInput = (input) => {
   }
 }
 
+checkSigninForm = () => {
+  let inputs = signin_form.querySelectorAll('.form-input')
+  inputs.forEach(input => checkSigninInput(input))
+}
 
+signin_btn.onclick = () => {
+  checkSigninForm()
+}
+
+let inputs = signin_form.querySelectorAll('.form-input')
+inputs.forEach(input => {
+  input.addEventListener('focusout', () => {
+    checkSigninInput(input)
+  })
+})
