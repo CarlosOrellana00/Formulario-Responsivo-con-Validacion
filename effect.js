@@ -29,6 +29,7 @@ checkSigninInput = (input) => {
       if(val.length === 0 || !validateEmail(val)){
         form_group.classList.add('err')
         form_group.classList.remove('success')
+        err_span.innerHTML = 'el correo no es correcto'
       } else {
         form_group.classList.add('successs')
         form_group.classList.remove('err')
