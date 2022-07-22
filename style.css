@@ -1,38 +1,37 @@
-:root{
-  --main-color:  #2980b9;
-  --form-bg: rgba(0,0,0, 0.8);
+:root {
+  --main-color: #2980b9;
+  --form-bg: rgba(0, 0, 0, 0.8);
   --border-color: #2980b9;
-  --form-color:#c6c6c6;
-  --form-input-bg:rgba(2,2,2, 0.22);
+  --form-color: #c6c6c6;
+  --form-input-bg: rgba(2, 2, 2, 0.22);
 
   --border-radius: 10px;
   --form-logo-size: 200px;
   --form-max-width: 500px;
 
-  --color-err: #c0392b;
-
+  --err: #c0392b;
 }
 
-*{
+* {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
   -webkit-tap-highlight-color: transparent;
 }
 
-body{
+body {
   font-family: "Source Sans Pro", sans-serif;
   height: 100vh;
   position: relative;
   display: grid;
-  place-content: center;
+  place-items: center;
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
   user-select: none;
 }
 
-.form{
+.form {
   padding: 50px 60px;
   background-color: var(--form-bg);
   border-radius: var(--border-radius);
@@ -51,12 +50,12 @@ body{
   width: var(--form-logo-size);
 }
 
-.form-group{
+.form-group {
   position: relative;
   margin-bottom: 20px;
 }
 
-.form-input{
+.form-input {
   background-color: var(--form-input-bg);
   border: 2px solid transparent;
   height: 46px;
@@ -70,11 +69,15 @@ body{
   transition: border 0.3s ease-in-out;
 }
 
-.form-input::placeholder{
-  color:var(--form-color)
+.form-input::placeholder {
+  color: var(--form-color);
 }
 
-.form-input-icon{
+.form-input:focus {
+  border: 2px solid var(--border-color);
+}
+
+.form-input-icon {
   position: absolute;
   right: 10px;
   top: 14px;
@@ -82,46 +85,46 @@ body{
   transition: transform 0.3s ease-in-out;
 }
 
-.form-input-icon.err{
-  color: var(--color-err);
+.form-input-icon.err {
+  color: var(--err);
 }
 
-.form-input-icon.success{
+.form-input-icon.success {
   color: #27ae60;
 }
 
 .form-group.err .form-input-icon.err,
-.form-group.sucess  .form-input-icon.sucesss {
+.form-group.success .form-input-icon.success {
   transform: scale(1);
 }
 
-.form-input-err-msg{
+.form-input-err-msg {
   display: block;
   text-align: left;
   font-size: 14px;
   margin-top: 10px;
   padding-left: 20px;
-  color: var(--color-err);
+  color: var(--err);
 }
 
-.form-group-checkbox{
+.form-group-checkbox {
   text-align: left;
 }
 
-.form-group-checkbox input{
+.form-group-checkbox input {
   opacity: 0;
   height: 0;
   width: 0;
   cursor: pointer;
 }
 
-.form-group-checkbox label{
+.form-group-checkbox label {
   cursor: pointer;
   padding-left: 30px;
   position: relative;
 }
 
-.form-group-checkbox label::before{
+.form-group-checkbox label::before {
   content: "";
   position: absolute;
   left: 0;
@@ -144,7 +147,7 @@ body{
   transform: scale(1);
 }
 
-.form-btn{
+.form-btn {
   margin: 15px 0;
   height: 46px;
   width: 100%;
@@ -152,26 +155,27 @@ body{
   border: 2px solid var(--main-color);
   background-color: transparent;
   cursor: pointer;
-  outline: var(--main-color);
+  outline: none;
+  color: var(--main-color);
   text-transform: uppercase;
   font-weight: 600;
   font-size: 16px;
   transition: 0.3s ease-in-out;
 }
 
-.form-btn:hover{
+.form-btn:hover {
   background-color: var(--main-color);
   color: #fff;
 }
 
-.form-social{
+.form-social {
   margin: 15px 0 30px;
   display: flex;
   align-items: center;
   justify-content: space-between;
 }
 
-.form-social-item{
+.form-social-item {
   display: grid;
   place-items: center;
   height: 44px;
@@ -185,14 +189,39 @@ body{
   color: #fff;
 }
 
-.form-social-item.fb{
+.form-social-item.fb {
   background-color: #3b5999;
 }
 
-.form-social-item.tw{
+.form-social-item.tw {
   background-color: #1da1f2;
 }
 
-.form-social-item.gg{
+.form-social-item.gg {
   background-color: #df4a32;
+}
+
+.form-txt {
+  margin-top: 15px;
+  font-size: 14px;
+  display: block;
+}
+
+.form-txt a {
+  text-decoration: none;
+  color: var(--main-color);
+}
+
+.form-txt a:hover {
+  text-decoration: underline;
+}
+
+@media only screen and (max-width: 500px) {
+  .form {
+      height: 100vh;
+      width: 100%;
+      max-width: unset;
+      padding: 50px 30px;
+      border-radius: 0;
+  }
 }
